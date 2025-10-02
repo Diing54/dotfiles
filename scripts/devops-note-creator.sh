@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# DevOps Note Creator Script
-# Usage: devops
 
-# Configuration - UPDATE THIS PATH TO YOUR ACTUAL DEVOPS DIRECTORY
-DEVOPS_REPO="$HOME/DevOps"  # ⚠️ CHANGE THIS TO YOUR ACTUAL PATH ⚠️
+DEVOPS_REPO="$HOME/DevOps"
 KASTEN_DIR="$DEVOPS_REPO/kasten"
 TEMPLATE_FILE="$DEVOPS_REPO/template/Main Note.md"
 
