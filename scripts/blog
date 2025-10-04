@@ -1,0 +1,24 @@
+#!/bin/bash
+
+BLOG_DIR="$HOME/blog"
+
+# Check if blog directory exists
+if [ ! -d "$BLOG_DIR" ]; then
+    echo "Error: Blog directory not found at $BLOG_DIR"
+    exit 1
+fi
+
+cd "$BLOG_DIR"
+
+# Get post title
+read -p "Enter post title: " title
+
+# Generate filename
+filename=$(echo "$title" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | sed 's/[^a-z0-9-]//g')
+filename="${filename}.md"
+
+# Create post with Hugo
+hugo new "posts/$filename"
+
+# Open in neovim
+nvim "content/posts/$filename"
